@@ -1,0 +1,19 @@
+<div class="container">
+  <h2 class="mt-4 mb-4">Verificador da Mega-Sena</h2>
+
+  <div class="form-group">
+    <label for="sorteioInput">Informe os números sorteados (separados por vírgula):</label>
+    <input type="text" class="form-control" id="sorteioInput" [(ngModel)]="sorteio" placeholder="Ex: 12, 23, 34, 45, 56, 60">
+  </div>
+
+  <div class="form-group">
+    <label for="apostaInput">Informe sua aposta (de 6 a 10 números, separados por vírgula):</label>
+    <input type="text" class="form-control" id="apostaInput" [(ngModel)]="aposta" placeholder="Ex: 1, 2, 3, 4, 5, 6">
+  </div>
+
+  <button class="btn btn-primary" (click)="verificarAcertos()">Verificar Acertos</button>
+
+  <div class="mt-4" *ngIf="numerosAcertados !== null">
+    <p>Você acertou {{ numerosAcertados }} número(s).</p>
+  </div>
+</div>
